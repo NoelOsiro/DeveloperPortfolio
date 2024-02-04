@@ -1,7 +1,7 @@
 'use client'
 import React, { createContext, useState, ReactNode, useContext } from 'react';
 import { createTheme, CustomTheme, Theme, ThemeProvider } from '@mui/material/styles';
-import { themeData } from '@/app/data/themeData';
+import { themeData } from '@/data/themeData';
 
 // Define types
 type SetHandleDrawer = () => void;

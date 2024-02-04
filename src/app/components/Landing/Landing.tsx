@@ -3,8 +3,8 @@ import React, { useContext } from 'react';
 import { Button } from '@mui/material';
 import './Landing.css';
 import { useThemeContext } from '@/app/contexts/ThemeContext';;
-import { headerData } from '../../data/headerData';
-import { socialsData } from '../../data/socialsData';
+import { headerData } from '../../../data/headerData';
+import { socialsData } from '../../../data/socialsData';
 import Link from 'next/link';
 
 
