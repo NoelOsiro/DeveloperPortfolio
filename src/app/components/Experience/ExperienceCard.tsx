@@ -20,7 +20,7 @@ interface SingleBlogProps {
 function ExperienceCard({id, company, jobtitle, startYear, endYear}:SingleBlogProps) {
 
     const { theme } = useThemeContext();
-
+    const imageSource = theme.type === 'light' ? '/assets/svg/experience/expImgBlack.svg' : '/assets/svg/experience/expImgWhite.svg'
     const SingleDate = styled('h6')<{ theme: CustomTheme }>((props) => ({
         color: props.theme.primary,
     }));
@@ -49,9 +49,9 @@ function ExperienceCard({id, company, jobtitle, startYear, endYear}:SingleBlogPr
 
     return (
         <Fade bottom>
-            <div key={id} className={`experience-card ${classes.experienceCard}`}>
+            <div key={id} className="experience-card" style={classes.experienceCard}>
                 <SingleExpCard theme={theme} className="expcard-img" style={{backgroundColor: theme.primary}}>
-                    <img src={theme.type === 'light' ? expImgBlack : expImgWhite} alt="" />
+                    <img src={imageSource} alt="" />
                 </SingleExpCard>
                 <div className="experience-details">
                     <SingleDate theme={theme}>{startYear}-{endYear}</SingleDate>

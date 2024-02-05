@@ -1,7 +1,7 @@
 'use client'
 import React, { useContext } from 'react';
 import { Button } from '@mui/material';
-import './Landing.css';
+import './landing.css';
 import { useThemeContext } from '@/app/contexts/ThemeContext';;
 import { headerData } from '../../../data/headerData';
 import { socialsData } from '../../../data/socialsData';

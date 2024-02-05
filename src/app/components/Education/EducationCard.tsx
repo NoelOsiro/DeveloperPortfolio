@@ -20,16 +20,25 @@ function EducationCard({ id, institution, course, startYear, endYear }: Educatio
 
     const { theme } = useThemeContext();
 
-    const useStyles = () => ({
-        educationCard: {
-            backgroundColor: theme.primary30,
-            "&:hover": {
-                backgroundColor: theme.primary50,
-            },
+   
+    const SingleEducationCard = styled('div')<{ theme: CustomTheme }>((props) => ({
+        backgroundColor: props.theme.primary30,
+        "&:hover": {
+            backgroundColor: theme.primary50,
+            cursor: 'pointer',
         },
-    });
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems:'flex-start',
+        justifyContent: 'flex-start',
+        height: 140,
+        borderRadius: 20,
+        
+        transition: 'background-color 200ms ease-in-out',
+    }));
     const SingleEducationImage = styled('div')<{ theme: CustomTheme }>((props) => ({
         backgroundColor: props.theme.primary,
+        
     }));
     const SingleDate = styled('h6')<{ theme: CustomTheme }>((props) => ({
         color: props.theme.primary,
@@ -40,20 +49,20 @@ function EducationCard({ id, institution, course, startYear, endYear }: Educatio
     const SingleDescription = styled('h6')<{ theme: CustomTheme }>((props) => ({
         color: props.theme.tertiary80,
     }));
-    const classes = useStyles();
+    const imageSource = theme.type === 'light' ? eduImgBlack :eduImgWhite
 
     return (
         <Fade bottom>
-            <div key={id} className={`education-card ${classes.educationCard}`} >
+            <SingleEducationCard theme={theme} key={id} className="education-card">
                 <SingleEducationImage className="educard-img" theme={theme} >
-                    <Image src={theme.type === 'light' ? eduImgBlack : eduImgWhite} alt="" />
+                    <Image src={imageSource} alt="" />
                 </SingleEducationImage>
                 <div className="education-details">
                     <SingleDate style={{ color: theme.primary }} theme={theme}>{startYear}-{endYear}</SingleDate>
                     <SingleTitle style={{ color: theme.tertiary }} theme={theme}>{course}</SingleTitle>
                     <SingleDescription style={{ color: theme.tertiary80 }} theme={theme}>{institution}</SingleDescription>
                 </div>
-            </div>
+            </SingleEducationCard>
         </Fade>
     )
 }

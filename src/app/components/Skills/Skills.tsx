@@ -1,22 +1,20 @@
 'use client'
 import React from 'react';
 import Marquee from "react-fast-marquee";
-
 import './Skills.css'
-
 import { useThemeContext } from '../../contexts/ThemeContext';
 import { skillsData } from '@//data/skillsData'
 import { skillsImage } from '@/utils/skillsImage'
 
 function Skills() {
-
     const { theme } = useThemeContext();
-
     const skillBoxStyle = {
         backgroundColor: theme.secondary,
         boxShadow: `0px 0px 30px ${theme.primary30}`
     }
-
+    const skillsImage = (skill:string)=>{
+        return './assets/svg/skills/' + skill.toLowerCase() + '.svg'
+    }
     return (
         <div className="skills" style={{backgroundColor: theme.secondary}}>
             <div className="skillsHeader">
