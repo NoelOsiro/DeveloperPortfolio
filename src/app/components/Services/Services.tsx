@@ -1,13 +1,9 @@
 'use client'
-import React,{useContext} from 'react';
-
-import { ThemeContext, useThemeContext } from '../../contexts/ThemeContext';
-
+import React from 'react';
+import {useThemeContext } from '../../contexts/ThemeContext';
 import { servicesData } from '../../../data/servicesData';
-
 import './Services.css'
 import SingleService from './SingleService/SingleService';
-
 function Services() {
 
     const { theme } = useThemeContext();

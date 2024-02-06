@@ -2,9 +2,8 @@
 import React from 'react';
 import { FaPlay, FaCode } from 'react-icons/fa';
 import Fade from 'react-reveal/Fade';
-import { SingleProjectContainer } from './SingleProject.styles'; // Importing styled components
-import placeholder from '../../../assets/png/placeholder.png';
 import { CustomTheme } from '@mui/material/styles';
+import { ProjectContentImg, ProjectDesc, ProjectLang, ProjectLangSpan, ProjectShowcaseBtnLink, SingleProjectContainer, SingleProjectContent, SingleProjectContentH2, SingleProjectShowcaseBtn } from './SingleProject.styles';
 
 interface SingleProjectProps {
   id: number;
@@ -20,25 +19,25 @@ interface SingleProjectProps {
 const SingleProject: React.FC<SingleProjectProps> = ({ id, name, desc, tags, code, demo, image, theme }) => {
   return (
     <Fade bottom>
-      <SingleProjectContainer theme={theme}>
-        <div className='projectContent'>
-          <h2 id={name.replace(' ', '-').toLowerCase()}>{name}</h2>
-          {/* <img src={placeholder} alt={name} /> */}
-          <div className='project--showcaseBtn'>
-            <a href={demo} target='_blank' rel='noreferrer' className='iconBtn' aria-labelledby={`${name.replace(' ', '-')}-demo`}>
+      <SingleProjectContainer theme={theme} >
+        <SingleProjectContent theme={theme}>
+          <SingleProjectContentH2 theme={theme} id={name.replace(' ', '-').toLowerCase()}>{name}</SingleProjectContentH2>
+          <ProjectContentImg theme={theme} src={image} alt={name} className='project--image' />
+          <SingleProjectShowcaseBtn theme={theme}>
+            <ProjectShowcaseBtnLink href={demo} target='_blank' rel='noreferrer' className='iconBtn' aria-labelledby={`${name.replace(' ', '-')}-demo`} theme={theme}>
               <FaPlay id={`${name.replace(' ', '-')}-demo`} className='icon' aria-label='Demo' />
-            </a>
-            <a href={code} target='_blank' rel='noreferrer' className='iconBtn' aria-labelledby={`${name.replace(' ', '-')}-code`}>
+            </ProjectShowcaseBtnLink>
+            <ProjectShowcaseBtnLink href={code} target='_blank' rel='noreferrer' className='iconBtn' aria-labelledby={`${name.replace(' ', '-')}-code`} theme={theme}>
               <FaCode id={`${name.replace(' ', '-')}-code`} className='icon' aria-label='Code' />
-            </a>
-          </div>
-        </div>
-        <p className='project--desc'>{desc}</p>
-        <div className='project--lang'>
+            </ProjectShowcaseBtnLink>
+          </SingleProjectShowcaseBtn>
+        </SingleProjectContent>
+        <ProjectDesc className='project--desc' theme={theme}>{desc}</ProjectDesc >
+        <ProjectLang theme={theme}>
           {tags.map((tag, id) => (
-            <span key={id}>{tag}</span>
+            <ProjectLangSpan key={id} theme={theme}>{tag}</ProjectLangSpan>
           ))}
-        </div>
+        </ProjectLang>
       </SingleProjectContainer>
     </Fade>
   );

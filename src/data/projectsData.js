@@ -1,11 +1,11 @@
-import one from '/public/assets/svg/projects/one.svg'
-import two from '/public/assets/svg/projects/two.svg'
-import three from '/public/assets/svg/projects/three.svg'
-import four from '/public/assets/svg/projects/four.svg'
-import five from '/public/assets/svg/projects/five.svg'
-import six from '/public/assets/svg/projects/six.svg'
-import seven from '/public/assets/svg/projects/seven.svg'
-import eight from '/public/assets/svg/projects/eight.svg'
+const one = '/assets/svg/projects/one.svg'
+const two = '/assets/svg/projects/two.svg'
+const three = '/assets/svg/projects/three.svg'
+const four = '/assets/svg/projects/four.svg'
+const five = '/assets/svg/projects/five.svg'
+const six = '/assets/svg/projects/six.svg'
+const seven = '/assets/svg/projects/seven.svg'
+const eight = '/assets/svg/projects/eight.svg'
 
 
 export const projectsData = [

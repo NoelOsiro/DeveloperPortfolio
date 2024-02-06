@@ -1,50 +1,54 @@
 import { CustomTheme } from '@mui/material/styles';
-import styled from 'styled-components';
+import { styled } from "@mui/system";
+import { Button } from '@mui/material';
 
-export const ProjectsContainer = styled.div<{ theme: CustomTheme }>`
-  background-color: ${(props) => props.theme.secondary};
-`;
+export const ProjectsContainer = styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  backgroundColor: theme.secondary,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  minHeight: '100vh',
+  overflowX: 'hidden',
+  padding: '2rem',
+}));
 
-export const ProjectsHeader = styled.div<{ theme: CustomTheme }>`
-  color: ${(props) => props.theme.primary};
-  // add any additional styling for the header
-`;
+export const ProjectsHeader = styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  color: theme.primary,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  margin: '1rem',
+  marginBottom: '40px',
+  fontSize: '3.5rem',
+  fontStyle: 'normal',
+  fontWeight: 'bold',
+  fontFamily: 'var(--primaryFont)',
+  textAlign: 'center',
+}));
 
-export const ProjectsBody = styled.div<{ theme: CustomTheme }>`
-  // add any additional styling for the projects body
-`;
+export const ProjectsBody = styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+}));
 
-export const ProjectsBodyContainer = styled.div<{ theme: CustomTheme }>`
-  // add any additional styling for the projects body container
-`;
+export const ProjectsBodyContainer = styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '4.5rem',
+    width: '100%',
+}));
 
-export const ProjectsViewAll = styled.div<{ theme: CustomTheme }>`
-  // add any additional styling for the view all button
-  button {
-    color: ${(props) => props.theme.tertiary};
-    background-color: ${(props) => props.theme.primary};
-    transition: color 0.2s;
-
-    &:hover {
-      color: ${(props) => props.theme.secondary};
-      background-color: ${(props) => props.theme.primary};
-    }
-  }
-
-  svg {
-    color: ${(props) => props.theme.tertiary};
-    background-color: ${(props) => props.theme.secondary70};
-    width: 40px;
-    height: 40px;
-    padding: 0.5rem;
-    font-size: 1.05rem;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      color: ${(props) => props.theme.tertiary};
-      background-color: ${(props) => props.theme.secondary};
-    }
-  }
-`;
+export const ProjectsViewAll = styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  width: '100%',
+    padding: '2rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginTop: '2rem',
+}));

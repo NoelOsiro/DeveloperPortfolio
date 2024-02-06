@@ -10,11 +10,12 @@ import { ProjectsContainer, ProjectsHeader, ProjectsBody, ProjectsBodyContainer,
 function Projects() {
     const { theme } = useThemeContext();
 
+
     return (
         <>
             {projectsData.length > 0 && (
                 <ProjectsContainer id="projects" theme={theme}>
-                    <ProjectsHeader theme={theme}>
+                    <ProjectsHeader theme={theme} >
                         <h1>{'Projects'}</h1>
                     </ProjectsHeader>
                     <ProjectsBody theme={theme}>

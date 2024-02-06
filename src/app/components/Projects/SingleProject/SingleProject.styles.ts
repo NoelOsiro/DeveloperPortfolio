@@ -1,58 +1,136 @@
 import { CustomTheme } from '@mui/material/styles';
-import styled from 'styled-components';
+import { styled } from "@mui/system";
 
-export const SingleProjectContainer = styled.div<{ theme: CustomTheme }>`
-  background-color: ${(props) => props.theme.primary400};
+export const SingleProjectContainer =styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  backgroundColor: theme.primary,
+  boxShadow: '4px 4px 8px rgba(36, 3, 3, 0.2)',
+    width: '304px',
+    height: '360px',
+    borderRadius: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '1.4rem 2rem',
+    position: 'relative',
+    cursor: 'pointer',
+    overflow: 'hidden',
+    '&:hover img.img': {
+      opacity: 0,
+    },
+}));
 
-  .projectContent {
-    h2 {
-      color: ${(props) => props.theme.tertiary};
-    }
+export const SingleProjectContent =styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    height: '100%',
+}));
 
-    img {
-      // Add any styling for the project image
-    }
+export const SingleProjectContentH2 =styled('h2')(({ theme }: { theme: CustomTheme }) => ({
+  color: theme.tertiary,
+  fontFamily: 'var(--primaryFont)',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    fontSize: '1.525rem',
+    lineHeight: '110%',
+    textAlign: 'center',
+}));
+export const SingleProjectShowcaseBtn=styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  width: '100%',
+}));
 
-    .project--showcaseBtn {
-      // Add any styling for the showcase buttons container
-      .iconBtn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid ${(props) => props.theme.tertiary};
-        color: ${(props) => props.theme.tertiary};
-        transition: all 0.2s;
+export const ProjectContentImg = styled('img')(({ theme }: { theme: CustomTheme }) => ({
+  width: '100%',
+  height: '60%',
+  transition: 'opacity 0.7s 0.3s',
+  '&.img': { // Add a class to the image
+    width: '100%',
+    height: '60%',
+    transition: 'opacity 0.7s 0.3s',
+  },
+}));
 
-        &:hover {
-          background-color: ${(props) => props.theme.secondary};
-          color: ${(props) => props.theme.primary};
-          transform: scale(1.1);
-          border: 2px solid ${(props) => props.theme.secondary};
-        }
+export const SingleProjectHoverImg = styled(SingleProjectContainer)({
+  '&:hover $img.img': {
+    opacity: 0,
+  },
+});
 
-        .icon {
-          font-size: 1.1rem;
-          transition: all 0.2s;
-        }
-      }
-    }
-  }
+export const ProjectShowcaseBtnLink = styled('a')(({ theme }: { theme: CustomTheme }) => ({
+  color: theme.tertiary,
+  cursor: 'pointer',
+  textDecoration: 'none',
+  transition: 'transform 0.5s 0.3s',
+  width: '40px',
+  border: '2px solid #eaeaea',
+  height: '40px',
+  display: 'flex',
+  
+  alignItems: 'center',
+  borderRadius: '50px',
+  justifyContent: 'center',
+}));
 
-  .project--desc {
-    background: ${(props) => props.theme.secondary};
-    color: ${(props) => props.theme.tertiary};
-    // Add any additional styling for the project description
-  }
+export const SingleProjectHoverBtn = styled(SingleProjectContainer)({
+  '&:hover $projectShowcaseBtnLink:nth-child(2)': {
+    transform: 'translateX(-140px) scale(1.1) !important',
+  },
+});
 
-  .project--lang {
-    background: ${(props) => props.theme.secondary};
-    color: ${(props) => props.theme.tertiary80};
-    // Add any additional styling for the project language container
-    span {
-      // Add any additional styling for each language tag
-    }
-  }
-`;
+export const ProjectDesc = styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  position: 'absolute',
+  width: '95%',
+  height: '160px',
+  left: '0',
+  top: '0',
+  transform: 'translate(-110%, 40%)',
+  padding: '15px',
+  borderRadius: '0 20px 20px 0',
+  transition: 'transform 0.9s',
+  lineHeight: '110%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontFamily: 'var(--primaryFont)',
+}));
+
+export const SingleProjectHoverDesc = styled(SingleProjectContainer)({
+  '&:hover $projectDesc': {
+    transform: 'translate(-2%, 40%)',
+  },
+});
+
+export const ProjectLang = styled('div')(({ theme }: { theme: CustomTheme }) => ({
+  position: 'absolute',
+  bottom: '20px',
+  right: '0',
+  width: '140px',
+  fontSize: '0.8rem',
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '0.5rem',
+  flexDirection: 'column',
+  borderRadius: '10px 0 0 10px',
+  transform: 'translateX(100%)',
+  transition: 'transform 0.5s 0.3s',
+  padding: '0.825rem',
+}));
+
+export const SingleProjectHoverLang = styled(SingleProjectContainer)({
+  '&:hover $projectLang': {
+    transform: 'translateX(0)',
+  },
+});
+
+export const ProjectLangSpan = styled('span')(({ theme }: { theme: CustomTheme }) => ({
+  fontFamily: 'var(--primaryFont)',
+  fontWeight: '500',
+  wordBreak: 'break-word',
+  lineHeight: '100%',
+}));
