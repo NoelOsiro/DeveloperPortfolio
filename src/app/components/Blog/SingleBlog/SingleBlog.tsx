@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import placeholder from '/public/assets/png/placeholder.png';
 import { CustomTheme, styled } from '@mui/material/styles';
 import Image from 'next/image';
+import './SingleBlog.css'
 
 interface SingleBlogProps {
   theme: CustomTheme;

@@ -19,7 +19,7 @@ export const servicesData = [
     },
     {
         id: 6,
-        title: AWS Database DaaS',
+        title: 'AWS Database DaaS',
         icon: <BsCodeSlash />
     },
     {

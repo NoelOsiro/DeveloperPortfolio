@@ -51,6 +51,9 @@ const ServiceContent = styled('div')<{ theme: CustomTheme }>((props) => ({
   alignItems: 'center',
   justifyContent: 'center',
   padding: '1rem',
+  '& h4': {
+    marginTop: '5rem',
+  },
 }));
 
 const ServiceIcon = styled('div')(({ theme }: { theme: CustomTheme }) => ({

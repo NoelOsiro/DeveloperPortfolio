@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-
+import './Blog.css';
 import { HiArrowRight } from 'react-icons/hi';
 import { useThemeContext } from '../../contexts/ThemeContext';
 import { CustomTheme, styled } from '@mui/material/styles';
