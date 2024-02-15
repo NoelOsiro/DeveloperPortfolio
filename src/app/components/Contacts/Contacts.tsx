@@ -1,6 +1,6 @@
 'use client'
-import React, { FormEvent, useContext, useState } from 'react';
-import { Snackbar, IconButton, SnackbarContent } from '@mui/material';
+import React, { FormEvent, SyntheticEvent, useContext, useState } from 'react';
+import * from  './Contacts.style'
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
@@ -20,122 +20,12 @@ import {
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiPhone, FiAtSign } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
-
-import { ThemeContext, useThemeContext } from '../../contexts/ThemeContext';
-
+import {useThemeContext } from '../../contexts/ThemeContext';
 import { socialsData } from '../../../data/socialsData';
 import { contactsData } from '../../../data/contactsData';
-import { CustomTheme, styled } from '@mui/material/styles';
 import './Contacts.css';
+import { getComponentStyles } from './Contacts.style';
 
-const ContactsContainer = styled('div')<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.secondary,
-}));
-
-const ContactsHeader = styled('h1')<{ theme: CustomTheme }>((props) => ({
-  color: props.theme.primary,
-}));
-
-const ContactsBody = styled('div')<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.secondary,
-}));
-
-const ContactsForm = styled('div')<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.secondary,
-}));
-
-const InputContainer = styled('div')<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.secondary,
-}));
-
-const Label = styled('label')<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.secondary,
-  color: props.theme.primary,
-  fontFamily: 'var(--primaryFont)',
-  fontWeight: 600,
-  fontSize: '0.9rem',
-  padding: '0 5px',
-  transform: 'translate(25px,50%)',
-  display: 'inline-flex',
-}));
-
-const Input = styled('input')<{ theme: CustomTheme }>((props) => ({
-  border: `4px solid ${props.theme.primary80}`,
-  backgroundColor: `${props.theme.secondary}`,
-  color: `${props.theme.tertiary}`,
-  fontFamily: 'var(--primaryFont)',
-  fontWeight: 500,
-  transition: 'border 0.2s ease-in-out',
-  '&:focus': {
-    border: `4px solid ${props.theme.primary600}`,
-  },
-}));
-
-const Textarea = styled('textarea')<{ theme: CustomTheme }>((props) => ({
-  border: `4px solid ${props.theme.primary80}`,
-  backgroundColor: `${props.theme.secondary}`,
-  color: `${props.theme.tertiary}`,
-  fontFamily: 'var(--primaryFont)',
-  fontWeight: 500,
-  transition: 'border 0.2s ease-in-out',
-  '&:focus': {
-    border: `4px solid ${props.theme.primary600}`,
-  },
-}));
-
-const SubmitButton = styled('button')<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.primary,
-  color: props.theme.secondary,
-  transition: '250ms ease-in-out',
-  '&:hover': {
-    transform: 'scale(1.08)',
-    color: props.theme.secondary,
-    backgroundColor: props.theme.tertiary,
-  },
-}));
-
-const SnackbarStyled = styled(SnackbarContent)<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.primary,
-  color: props.theme.secondary,
-  fontFamily: 'var(--primaryFont)',
-}));
-
-const SocialIcon = styled('div')<{ theme: CustomTheme }>((props) => ({
-  width: '45px',
-  height: '45px',
-  borderRadius: '50%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: '21px',
-  backgroundColor: props.theme.primary,
-  color: props.theme.secondary,
-  transition: '250ms ease-in-out',
-  '&:hover': {
-    transform: 'scale(1.1)',
-    color: props.theme.secondary,
-    backgroundColor: props.theme.tertiary,
-  },
-}));
-
-const DetailsIcon = styled('div')<{ theme: CustomTheme }>((props) => ({
-  backgroundColor: props.theme.primary,
-  color: props.theme.secondary,
-  borderRadius: '50%',
-  width: '45px',
-  height: '45px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: '23px',
-  transition: '250ms ease-in-out',
-  flexShrink: 0,
-  '&:hover': {
-    transform: 'scale(1.1)',
-    color: props.theme.secondary,
-    backgroundColor: props.theme.tertiary,
-  },
-}));
 
 function Contacts() {
   const [open, setOpen] = useState(false);
@@ -146,7 +36,9 @@ function Contacts() {
   const [errMsg, setErrMsg] = useState('');
   const { theme } = useThemeContext();
 
-  const handleClose = (event, reason) => {
+  const {Contacts} = getComponentStyles(theme);
+
+  const handleClose = (event: any, reason:string) => {
     if (reason === 'clickaway') {
       return;
     }
@@ -185,9 +77,9 @@ function Contacts() {
   };
 
   return (
-    <ContactsContainer theme={theme} className='contacts' id='contacts'>
+    <Contacts id='contacts'>
       <div className='contacts--container'>
-        <ContactsHeader theme={theme}>Contacts</ContactsHeader>
+        <h1>Contacts</h1>
         <ContactsBody theme={theme} className='contacts-body'>
           <ContactsForm theme={theme} className='contacts-form'>
             <form onSubmit={handleContactForm}>
@@ -223,16 +115,16 @@ function Contacts() {
                 <Label theme={theme} htmlFor='Message'>
                   Message
                 </Label>
-                <Textarea
+                <InputMessage
                   theme={theme}
                   placeholder='Type your message....'
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  type='text'
+                  
                   name='Message'
                   className={`form-message`}
                 />
-              </InputContainer>
+              </InputMessage>
               <div className='submit-btn'>
                 <SubmitButton
                   type='submit'
@@ -260,7 +152,7 @@ function Contacts() {
                 </SubmitButton>
               </div>
             </form>
-            <Snackbar
+            {/* <Snackbar
               anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'center',
@@ -285,7 +177,7 @@ function Contacts() {
                 theme={theme}
                 message={errMsg}
               />
-            </Snackbar>
+            </Snackbar> */}
           </ContactsForm>
 
           <div className='contacts-details'>
@@ -449,11 +341,11 @@ function Contacts() {
         </ContactsBody>
       </div>
       <img
-        src={theme.contactsimg}
+        src={theme.contactsimg as string}
         alt='contacts'
         className='contacts--img'
       />
-    </ContactsContainer>
+    </Contacts>
   );
 }
 

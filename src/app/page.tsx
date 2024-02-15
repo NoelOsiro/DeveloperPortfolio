@@ -26,7 +26,7 @@ export default function Home() {
             <Services />
             <Testimonials />
             <Blog />
-            {/* <Contacts /> */}
+            <Contacts />
     </main>
   );
 }
