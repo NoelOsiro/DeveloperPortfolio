@@ -1,23 +1,23 @@
 export const experienceData = [
     {
         id: 1,
-        company: 'ManyaNet Solutions',
-        jobtitle: 'Network Administrator',
-        startYear: '2023',
-        endYear: 'Present'
+        company: 'Globex Corporation',
+        jobtitle: 'Frontend Developer',
+        startYear: '2018',
+        endYear: '2019'
     },
     {
         id: 2,
-        company: 'SDG AI Lab',
-        jobtitle: 'Frontend Support Engineer',
-        startYear: '2023',
-        endYear: '2023'
+        company: 'Vehement Capital Partners',
+        jobtitle: 'Backend Developer',
+        startYear: '2019',
+        endYear: '2020'
     },
     {
         id: 3,
-        company: 'Electrica Engineer',
-        jobtitle: 'Heritage Associates',
+        company: 'Wonka Industries',
+        jobtitle: 'Marketing',
         startYear: '2020',
-        endYear: '2022'
+        endYear: 'Present'
     },
 ]

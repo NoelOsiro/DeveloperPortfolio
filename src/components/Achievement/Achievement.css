@@ -77,7 +77,6 @@
 
 .achievecard-details2 h5 {
    width: 50%;
-   font-size: 1rem;
 }
 
 .achievecard-field {
@@ -173,7 +172,7 @@
 
     .achievement-card {
         margin-left: 0px;
-        height: auto;
+        height: fit-content;
     }
 
     .achievecard-content {
