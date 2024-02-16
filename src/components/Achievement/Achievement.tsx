@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { useThemeContext } from '../../contexts/ThemeContext';
-import { achievementData } from '../../../data/achievementData';
+import { achievementData } from '../../data/achievementData';
 import AchievementCard from './AchievementCard';
 import { CustomTheme, styled } from '@mui/material/styles';
 

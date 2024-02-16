@@ -20,8 +20,8 @@ import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiPhone, FiAtSign } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import {useThemeContext } from '../../contexts/ThemeContext';
-import { socialsData } from '../../../data/socialsData';
-import { contactsData } from '../../../data/contactsData';
+import { socialsData } from '../../data/socialsData';
+import { contactsData } from '../../data/contactsData';
 import './Contacts.css';
 import { getComponentStyles } from './Contacts.style';
 

@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { HiArrowRight } from 'react-icons/hi';
 import { useThemeContext } from '../../contexts/ThemeContext';
-import { projectsData } from '../../../data/projectsData';
+import { projectsData } from '../../data/projectsData';
 import SingleProject from './SingleProject/SingleProject';
 import { ProjectsContainer, ProjectsHeader, ProjectsBody, ProjectsBodyContainer, ProjectsViewAll } from './Projects.styles';
 

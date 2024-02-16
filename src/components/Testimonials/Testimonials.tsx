@@ -5,7 +5,7 @@ import './Testimonials.css';
 import { FaQuoteLeft, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { useThemeContext } from '../../contexts/ThemeContext';
 import { CustomTheme, styled } from '@mui/material/styles';
-import { testimonialsData } from '../../../data/testimonialsData';
+import { testimonialsData } from '../../data/testimonialsData';
 
 const TestimonialsContainer = styled('div')<{ theme: CustomTheme }>((props) => ({
   backgroundColor: props.theme.primary,

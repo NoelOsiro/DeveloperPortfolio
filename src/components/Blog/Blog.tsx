@@ -4,7 +4,7 @@ import './Blog.css';
 import { HiArrowRight } from 'react-icons/hi';
 import { useThemeContext } from '../../contexts/ThemeContext';
 import { CustomTheme, styled } from '@mui/material/styles';
-import { blogData } from '../../../data/blogData';
+import { blogData } from '../../data/blogData';
 import SingleBlog from './SingleBlog/SingleBlog';
 import Link from 'next/link';
 

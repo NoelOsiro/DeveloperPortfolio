@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import {useThemeContext } from '../../contexts/ThemeContext';
-import { servicesData } from '../../../data/servicesData';
+import { servicesData } from '../../data/servicesData';
 import './Services.css'
 import SingleService from './SingleService/SingleService';
 function Services() {

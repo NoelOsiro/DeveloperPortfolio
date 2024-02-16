@@ -2,7 +2,7 @@
 import React from 'react';
 import {useThemeContext } from '../../contexts/ThemeContext';
 import './Experience.css';
-import { experienceData } from '../../../data/experienceData'
+import { experienceData } from '../../data/experienceData'
 import ExperienceCard from './ExperienceCard';
 
 function Experience() {

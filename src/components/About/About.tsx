@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 
 import './About.css';
 import { useThemeContext } from '../../contexts/ThemeContext';
-import { aboutData } from '../../../data/aboutData'
+import { aboutData } from '../../data/aboutData'
 import Image from 'next/image'
 
 

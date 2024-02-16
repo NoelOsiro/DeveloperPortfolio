@@ -2,9 +2,9 @@
 import React, { useContext } from 'react';
 import { Button } from '@mui/material';
 import './landing.css';
-import { useThemeContext } from '@/app/contexts/ThemeContext';;
-import { headerData } from '../../../data/headerData';
-import { socialsData } from '../../../data/socialsData';
+import { useThemeContext } from '@/contexts/ThemeContext';;
+import { headerData } from '../../data/headerData';
+import { socialsData } from '../../data/socialsData';
 import Link from 'next/link';
 
 

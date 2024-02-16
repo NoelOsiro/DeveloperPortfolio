@@ -6,7 +6,7 @@ import { MdPhone } from 'react-icons/md';
 import { FaUser, FaFolderOpen } from 'react-icons/fa';
 import { BsFillGearFill } from 'react-icons/bs';
 import './Navbar.css';
-import { ThemeContext, useThemeContext } from '@/app/contexts/ThemeContext';  // Import ThemeContext and useThemeContext
+import { ThemeContext, useThemeContext } from '@/contexts/ThemeContext';  // Import ThemeContext and useThemeContext
 
 import { useStyles } from './style';
 import { Drawer } from "@mui/material";
