@@ -14,19 +14,17 @@ import Blog from "../components/Blog/Blog";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Landing/>
-      <About/>
-            <Education />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Achievement />
-            
-            
-            <Services />
-            <Testimonials />
-            <Blog />
-            <Contacts />
+      <Landing />
+      <About />
+      <Education />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Achievement />
+      <Services />
+      <Testimonials />
+      <Blog />
+      <Contacts />
     </main>
   );
 }

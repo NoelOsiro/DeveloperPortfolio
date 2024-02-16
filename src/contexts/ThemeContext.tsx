@@ -1,4 +1,4 @@
-'use client'
+// Import necessary modules
 import React, { createContext, useState, ReactNode, useContext } from 'react';
 import { createTheme, CustomTheme, Theme, ThemeProvider } from '@mui/material/styles';
 import { themeData } from '@/data/themeData';
@@ -7,7 +7,6 @@ import { themeData } from '@/data/themeData';
 type SetHandleDrawer = () => void;
 
 interface ThemeContextValue {
-  theme: CustomTheme;
   drawerOpen: boolean;
   setHandleDrawer: SetHandleDrawer;
 }
@@ -22,7 +21,6 @@ interface ThemeContextProviderProps {
 // ThemeContextProvider component
 export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
   // Initialize state with correct type
-  const [theme, setTheme] = useState<ThemeContextValue['theme']>(themeData.theme);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   // Function to toggle drawer
@@ -32,14 +30,18 @@ export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
 
   // Context value
   const value: ThemeContextValue = {
-    theme,
     drawerOpen,
     setHandleDrawer,
   };
 
+  // Define your theme
+  const theme = createTheme({
+    ...themeData.theme, // Use your theme data here
+  });
+
   return (
     <ThemeContext.Provider value={value}>
-      {children}
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
 }
