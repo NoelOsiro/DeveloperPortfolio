@@ -1,6 +1,5 @@
 'use client'
 import React, { FormEvent, SyntheticEvent, useContext, useState } from 'react';
-import * from  './Contacts.style'
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
@@ -36,7 +35,7 @@ function Contacts() {
   const [errMsg, setErrMsg] = useState('');
   const { theme } = useThemeContext();
 
-  const {Contacts} = getComponentStyles(theme);
+  const {Contacts, ContactsBody,Label,Input,InputMessage,SubmitButton, DetailsIcon,SocialIcon,ContactsContainer, ContactsForm,InputContainer} = getComponentStyles(theme);
 
   const handleClose = (event: any, reason:string) => {
     if (reason === 'clickaway') {
@@ -77,8 +76,8 @@ function Contacts() {
   };
 
   return (
-    <Contacts id='contacts'>
-      <div className='contacts--container'>
+    <Contacts id='contacts' theme={theme}>
+      <ContactsContainer theme={theme}>
         <h1>Contacts</h1>
         <ContactsBody theme={theme} className='contacts-body'>
           <ContactsForm theme={theme} className='contacts-form'>
@@ -124,7 +123,7 @@ function Contacts() {
                   name='Message'
                   className={`form-message`}
                 />
-              </InputMessage>
+              </InputContainer>
               <div className='submit-btn'>
                 <SubmitButton
                   type='submit'
@@ -339,7 +338,7 @@ function Contacts() {
             </div>
           </div>
         </ContactsBody>
-      </div>
+      </ContactsContainer>
       <img
         src={theme.contactsimg as string}
         alt='contacts'

@@ -12,7 +12,7 @@ const Contacts = (props: { theme: CustomTheme }) => ({
 });
 
 
-const ContactsContainer = styled('div')<{ theme: CustomTheme }>((props) => ({
+const ContactsContainer = (props: { theme: CustomTheme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
@@ -26,18 +26,18 @@ const ContactsContainer = styled('div')<{ theme: CustomTheme }>((props) => ({
     fontSize: '3.5rem',
     marginBottom: '2.5rem',
   },
-}));
+});
 
-const ContactsBody = styled('div')<{ theme: CustomTheme }>((props) => ({
+const ContactsBody = (props: { theme: CustomTheme }) => ({
   backgroundColor: props.theme.secondary,
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
   width: '100 %',
-}));
+});
 
-const ContactsForm = styled('div')<{ theme: CustomTheme }>((props) => ({
+const ContactsForm = (props: { theme: CustomTheme }) => ({
   backgroundColor: props.theme.secondary,
   display: 'flex',
   flex: '0.4',
@@ -49,15 +49,15 @@ const ContactsForm = styled('div')<{ theme: CustomTheme }>((props) => ({
     justifyContent: 'space-evenly',
     width: '100 %',
   },
-}));
+});
 
-const InputContainer = styled('div')<{ theme: CustomTheme }>((props) => ({
+const InputContainer = (props: { theme: CustomTheme }) => ({
   backgroundColor: props.theme.secondary,
   width: '100 %',
 
-}));
+});
 
-const Label = styled('label')<{ theme: CustomTheme }>((props) => ({
+const Label = (props: { theme: CustomTheme }) => ({
   backgroundColor: props.theme.secondary,
   color: props.theme.primary,
   fontFamily: 'var(--primaryFont)',
@@ -66,9 +66,9 @@ const Label = styled('label')<{ theme: CustomTheme }>((props) => ({
   padding: '0 5px',
   transform: 'translate(25px,50%)',
   display: 'inline-flex',
-}));
+});
 
-const Input = styled('input')<{ theme: CustomTheme }>((props) => ({
+const Input = (props: { theme: CustomTheme }) =>  ({
   border: `4px solid ${props.theme.primary80}`,
   backgroundColor: `${props.theme.secondary}`,
   color: `${props.theme.tertiary}`,
@@ -86,9 +86,9 @@ const Input = styled('input')<{ theme: CustomTheme }>((props) => ({
   padding: '0.7rem 0.7rem',
   width: '100 %',
   resize: 'none',
-}));
+});
 
-const InputMessage = styled('input')<{ theme: CustomTheme }>((props) => ({
+const InputMessage = (props: { theme: CustomTheme }) =>  ({
   border: `4px solid ${props.theme.primary80}`,
   backgroundColor: `${props.theme.secondary}`,
   color: `${props.theme.tertiary}`,
@@ -106,9 +106,9 @@ const InputMessage = styled('input')<{ theme: CustomTheme }>((props) => ({
   padding: '0.7rem 0.7rem',
   width: '100 %',
   resize: 'none',
-}));
+});
 
-const SubmitButton = styled('button')<{ theme: CustomTheme }>((props) => ({
+const SubmitButton = (props: { theme: CustomTheme }) =>  ({
   backgroundColor: props.theme.primary,
   color: props.theme.secondary,
   transition: '250ms ease-in-out',
@@ -132,15 +132,15 @@ const SubmitButton = styled('button')<{ theme: CustomTheme }>((props) => ({
     fontSize: '16px',
     fontFamily: 'var(--primaryFont)',
   },
-}));
+});
 
-const SnackbarStyled = styled(SnackbarContent)<{ theme: CustomTheme }>((props) => ({
+const SnackbarStyled = (props: { theme: CustomTheme }) =>  ({
   backgroundColor: props.theme.primary,
   color: props.theme.secondary,
   fontFamily: 'var(--primaryFont)',
-}));
+});
 
-const SocialIcon = styled('div')<{ theme: CustomTheme }>((props) => ({
+const SocialIcon = (props: { theme: CustomTheme }) => ({
   width: '45px',
   height: '45px',
   borderRadius: '50%',
@@ -156,9 +156,9 @@ const SocialIcon = styled('div')<{ theme: CustomTheme }>((props) => ({
     color: props.theme.secondary,
     backgroundColor: props.theme.tertiary,
   },
-}));
+});
 
-const DetailsIcon = styled('div')<{ theme: CustomTheme }>((props) => ({
+const DetailsIcon = (props: { theme: CustomTheme }) => ({
   backgroundColor: props.theme.primary,
   color: props.theme.secondary,
   borderRadius: '50%',
@@ -175,18 +175,22 @@ const DetailsIcon = styled('div')<{ theme: CustomTheme }>((props) => ({
     color: props.theme.secondary,
     backgroundColor: props.theme.tertiary,
   },
-}));
+});
 
 export const getComponentStyles = (theme: CustomTheme) => ({
   Contacts: styled('div')`${(props: { theme: CustomTheme }) => Contacts(props).toString()}`,
-  ContactsContainer: styled('div')`${ContactsContainer(theme)}`,
-  ContactsBody: styled('div')`${ContactsBody(theme)}`,
-  ContactsForm: styled('div')`${ContactsForm(theme)}`,
-  InputContainer: styled('div')`${InputContainer(theme)}`,
-  Label: styled('label')`${Label(theme)}`,
-  Input: styled('input')`${Input(theme)}`,
-  InputMessage: styled('input')`${InputMessage(theme)}`,
-  SubmitButton: styled('button')`${SubmitButton(theme)}`,
+  ContactsContainer: styled('div')`${(props: { theme: CustomTheme }) => ContactsContainer(props).toString()}`,
+  ContactsBody: styled('div')`${(props: { theme: CustomTheme }) => ContactsBody(props).toString()}`,
+  ContactsForm: styled('div')`${(props: { theme: CustomTheme }) => ContactsForm(props).toString()}`,
+  InputContainer: styled('div')`${(props: { theme: CustomTheme }) => InputContainer(props).toString()}`,
+  Label: styled('label')`${(props: { theme: CustomTheme }) => Label(props).toString()}`,
+  Input: styled('input')`${(props: { theme: CustomTheme }) => Input(props).toString()}`,
+  InputMessage: styled('input')`${(props: { theme: CustomTheme }) => InputMessage(props).toString()}`,
+  SubmitButton: styled('button')`${(props: { theme: CustomTheme }) => SubmitButton(props).toString()}`,
+  SnackbarStyled: styled('div')`${(props: { theme: CustomTheme }) => SnackbarStyled(props).toString()}`,
+  SocialIcon: styled('div')`${(props: { theme: CustomTheme }) => SocialIcon(props).toString()}`,
+  DetailsIcon: styled('div')`${(props: { theme: CustomTheme }) => DetailsIcon(props).toString()}`,
   // Define other components similarly
 });
+
 
