@@ -18,6 +18,6 @@ export const experienceData = [
         company: 'Ministry Of Education, Kenya (MOE)',
         jobtitle: 'Resident Mechanical and Electrical Engineer',
         startYear: '2020',
-        endYear: 'Present'
+        endYear: '2022'
     },
 ]
