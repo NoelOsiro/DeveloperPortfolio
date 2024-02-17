@@ -2,7 +2,7 @@ export const educationData = [
     {
         id: 1,
         institution: 'University of Nairobi',
-        course: 'Bsc Electrical and Electronic Engineering,
+        course: 'Bsc Electrical and Electronic Engineering',
         startYear: '2014',
         endYear: '2020'
     },

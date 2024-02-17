@@ -1,7 +1,7 @@
 export const experienceData = [
     {
         id: 1,
-        company: 'SDG AL Lab,
+        company: 'SDG AL Lab',
         jobtitle: 'Front-End Support for Digital Technologies Radar Development',
         startYear: '2023',
         endYear: '2023'

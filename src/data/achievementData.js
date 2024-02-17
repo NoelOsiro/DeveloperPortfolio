@@ -20,7 +20,7 @@ export const achievementData = {
         {
             id : 3,
             title : 'Engineering Board of Kenya License',
-            details : 'Graduate Engineer,
+            details : 'Graduate Engineer',
             date : 'Aug 20, 2021',
             field : 'Engineering',
             image : 'https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
